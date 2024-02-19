@@ -75,12 +75,15 @@ class Painter extends StatelessWidget {
 
   void _onPanEnd(DragEndDetails ded) {}
 
+  void _onPointerCancel(PointerCancelEvent pcl){}
+
   @override
   Widget build(BuildContext context) {
     return Listener(
       onPointerDown: _onPointerDown,
       onPointerMove: _onPointerMove,
       onPointerUp: _onPointerUp,
+      onPointerCancel: _onPointerCancel,
       behavior: HitTestBehavior.opaque,
       child: ExValueBuilder<DrawConfig>(
         valueListenable: drawingController.drawConfig,
