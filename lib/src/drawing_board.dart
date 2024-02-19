@@ -174,6 +174,7 @@ class _DrawingBoardState extends State<DrawingBoard> {
           _controller.addFingerCount(pde.localPosition),
       onPointerUp: (PointerUpEvent pue) =>
           _controller.reduceFingerCount(pue.localPosition),
+      onPointerCancel: (PointerCancelEvent pcl) => _controller.reduceFingerCount(pcl.localPosition),
       child: content,
     );
   }
